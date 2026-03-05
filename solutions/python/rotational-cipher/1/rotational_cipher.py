@@ -1,0 +1,12 @@
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+def rotate(text, key):
+    result = ""
+    for letter in text:
+        if letter.isalpha():
+            if letter.isupper():
+                result += ALPHABET[(ALPHABET.index(letter.lower()) + key) % 26].upper()
+            else:
+                result += ALPHABET[(ALPHABET.index(letter) + key) % 26]
+        else:
+            result += letter
+    return result
